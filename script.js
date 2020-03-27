@@ -1,7 +1,7 @@
 // getting places from APIs
 function loadPlaces(position) {
   const params = {
-    radius: 300, // search places not farther than this value (in meters)
+    radius: 500, // search places not farther than this value (in meters)
     clientId: 'YW1D3SNB51FM3X4SBPHNGD4FUAQB04LLXKBGH0KS5UX0C1AO',
     clientSecret: 'LP5EN5Z52OHOCS2I0PSDGF1JZNF1OW4AXQ0Q4RSAKEZSSAC1',
     version: '20300101', // foursquare versioning, required but unuseful for this demo
@@ -47,7 +47,7 @@ window.onload = () => {
             const placeText = document.createElement('a-link');
             placeText.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
             placeText.setAttribute('title', place.name);
-            placeText.setAttribute('scale', '15 15 15');
+            placeText.setAttribute('scale', '25 25 25');
 
             placeText.addEventListener('loaded', () => {
               window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
